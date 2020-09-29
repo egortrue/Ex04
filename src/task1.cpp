@@ -13,7 +13,6 @@ int comp2(const void* p1, const void* p2)
         return -1;
     return 0;
 }
-
 int comp3(const void* p1, const void* p2) {
     return strcmp(*((const char**)p1), *((const char**)p2));
 }
@@ -25,11 +24,11 @@ int comp4(const void* p1, const void* p2) {
 int comp5(const void* p1, const void* p2)
 {
     unsigned int counter1 = 0, counter2 = 0;
-    for (unsigned int i = 0; i < strlen(*((const char**)p1)); i++)
-        if (((const char*)p1)[i] == ' ')
+    for (unsigned int i = 0; i < strlen(*(const char**)p1); i++)
+        if ((*(const char**)p1)[i] == ' ')
             counter1++;
-    for (unsigned int i = 0; i < strlen(*((const char*)p2)); i++)
-        if (((const char*)p2)[i] == ' ')
+    for (unsigned int i = 0; i < strlen(*(const char**)p2); i++)
+        if ((*(const char**)p2)[i] == ' ')
             counter2++;
     return counter1 - counter2;
 }
